@@ -5,7 +5,7 @@ from decouple import config  # Ensure `python-decouple` is installed
 DEBUG = False
 
 # Set ALLOWED_HOSTS dynamically
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "django-production-tutorial.us-west-1.elasticbeanstalk.com").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "prod2.us-west-1.elasticbeanstalk.com").split(",")
 
 # Database configuration: PostgreSQL (if available) or fallback to SQLite
 # DATABASES = {
