@@ -5,6 +5,10 @@ branch-defaults:
   master:
     environment: production
     group_suffix: null
+environment-defaults:
+  production:
+    branch: null
+    repository: null
 global:
   application_name: Django app
   branch: null
