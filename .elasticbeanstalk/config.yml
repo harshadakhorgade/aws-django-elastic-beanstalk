@@ -3,7 +3,7 @@ branch-defaults:
     environment: production
     group_suffix: null
   master:
-    environment: production
+    environment: null
     group_suffix: null
 environment-defaults:
   production:
