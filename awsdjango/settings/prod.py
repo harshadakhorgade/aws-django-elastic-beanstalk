@@ -10,12 +10,12 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "prod2.us-west-1.elasticbeanstalk.com
 # Database configuration: PostgreSQL (if available) or fallback to SQLite
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'backenddemo',
-        'USER': 'mysuperuser',
-        'PASSWORD': 'mysuperuser',
-        'HOST': 'backenddemo.c1asac4y4rwk.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.getenv('DB_NAME', os.path.join(BASE_DIR, 'db.sqlite3')),
+        'USER': os.getenv('DB_USER', ''),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', ''),
+        'PORT': os.getenv('DB_PORT', ''),
     }
 }
 
