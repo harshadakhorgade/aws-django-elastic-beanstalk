@@ -8,16 +8,17 @@ DEBUG = False
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "testing2.us-west-1.elasticbeanstalk.com").split(",")
 
 # Database Configuration - Uses RDS if available, otherwise falls back to SQLite
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.getenv('RDS_DB_NAME', 'default_db_name'),
-#         'USER': os.getenv('RDS_USERNAME', 'default_user'),
-#         'PASSWORD': os.getenv('RDS_PASSWORD', 'default_password'),
-#         'HOST': os.getenv('RDS_HOSTNAME', 'default_host'),
-#         'PORT': os.getenv('RDS_PORT', '5432'),
-#     }
-# }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('RDS_DB_NAME', 'default_db_name'),
+        'USER': os.getenv('RDS_USERNAME', 'default_user'),
+        'PASSWORD': os.getenv('RDS_PASSWORD', 'default_password'),
+        'HOST': os.getenv('RDS_HOSTNAME', 'default_host'),
+        'PORT': os.getenv('RDS_PORT', '5432'),
+    }
+}
 
 # Password Validators
 AUTH_PASSWORD_VALIDATORS = [
