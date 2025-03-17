@@ -19,6 +19,13 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "prod2.us-west-1.elasticbeanstalk.com
 #     }
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy',  # Prevents database errors
+    }
+}
+
+
 # Password Validators
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
